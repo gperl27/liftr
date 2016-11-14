@@ -13,7 +13,7 @@
 <div class='row'>	
     <div class='col-md-2 col-md-offset-1'>
     	<h2>Monday</h2>
-    	<a href="/workouts/{id}">Edit</a>
+    	<a href="/workouts/{{ $mondayWorkout->id }}">Edit</a>
     	<ul>
     	@foreach($mondayExercises as $exercise)
     		<li>

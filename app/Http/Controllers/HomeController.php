@@ -29,6 +29,6 @@ class HomeController extends Controller
         $workouts = $user->workouts;
         $mondayWorkout = $workouts->where('day' , 'Monday')->first();
         $mondayExercises = $mondayWorkout->exercises;
-        return view('home', compact('mondayExercises'));
+        return view('home', compact('mondayExercises', 'mondayWorkout'));
     }
 }
