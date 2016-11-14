@@ -23,5 +23,9 @@ Route::get('/workouts/{workout}', 'WorkoutsController@show');
 
 //exercises
 Route::get('/workout/{workout_id}/exercise/new', 'ExercisesController@new');
-Route::post('/workout/{workout_id}/exercise/create', 'ExercisesController@create');
+Route::post('/workout/{workout}/exercise/create', 'ExercisesController@create');
+
+Route::get('exercise/{exercise}', 'ExercisesController@edit');
+Route::patch('/exercise/{exercise}/update', 'ExercisesController@update');
+
 Route::delete('/exercise/{exercise}/destroy', 'ExercisesController@destroy');
