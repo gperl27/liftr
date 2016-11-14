@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Workout;
+use App\Exercise;
 
 class ExercisesController extends Controller
 {
@@ -16,5 +17,10 @@ class ExercisesController extends Controller
   		$workout = Workout::find($workout_id);
   		$workout->exercises()->create($request->all());
   		return redirect("/workouts/$workout_id");
+  	}
+
+  	public function destroy(Request $request, Exercise $exercise){
+  		$exercise->delete();
+  		return back();
   	}
 }
