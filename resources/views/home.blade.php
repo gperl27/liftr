@@ -14,17 +14,21 @@
 <div class='row'>	
     <div class='col-md-2 col-md-offset-1'>
     	<h2>Monday</h2>
-    	<a href="/workouts/{{ $mondayWorkout->id }}">Edit</a>
-    	<ul>
-    	@foreach($mondayExercises as $exercise)
-    		<li>
-	    		<h4>{{ $exercise->name }}</h4>
-	    		<span>Sets: {{ $exercise->sets }}</span>
-	    		<span>Reps: {{ $exercise->reps }}</span>
-	    		<span>Weight: {{ $exercise->weight }}</span>
-    		</li>
-    	@endforeach
-    	</ul>
+        @if($mondayWorkout)
+        	<a href="/workouts/{{ $mondayWorkout->id }}">Edit</a>
+        	<ul>
+        	@foreach($mondayExercises as $exercise)
+        		<li>
+    	    		<h4>{{ $exercise->name }}</h4>
+    	    		<span>Sets: {{ $exercise->sets }}</span>
+    	    		<span>Reps: {{ $exercise->reps }}</span>
+    	    		<span>Weight: {{ $exercise->weight }}</span>
+        		</li>
+        	@endforeach
+        	</ul>
+        @else
+            <h4>No Monday workout found for this week.</h4>
+        @endif
     </div>
     <div class='col-md-2'>
     	<h2>Tuesday</h2>
