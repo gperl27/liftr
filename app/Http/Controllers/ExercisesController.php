@@ -8,6 +8,11 @@ use App\Exercise;
 
 class ExercisesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
   	public function new($workout_id){
   		// $workout = Workout::find($workout_id);
   		return view('new_exercise', compact('workout_id'));
@@ -30,7 +35,7 @@ class ExercisesController extends Controller
 
 
 /*
-	Needs fixing on routes/params
+	Needs fixing on routes/http_parse_params(param)
  */
   	public function update(Request $request, Exercise $exercise){
   		$exercise->update($request->all());
