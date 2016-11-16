@@ -39,6 +39,7 @@ class ExercisesController extends Controller
  */
   	public function update(Request $request, Exercise $exercise){
   		$exercise->update($request->all());
+      $request->session()->flash('status', 'Exercise updated!');
   		return back();
   	}
 }

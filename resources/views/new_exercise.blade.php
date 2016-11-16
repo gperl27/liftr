@@ -22,7 +22,8 @@
 			<label for="exerciseWeight">Weight</label>
 			<input class='form-control' type="number" name="weight" id='exerciseWeight' placeholder="Enter amount of weight">
 		</div>
-		<button type="submit" class="btn btn-default">Submit</button>
+		<button type="submit" class="btn btn-primary">Submit</button>
+		<a class='btn btn-warning' href="/workouts/{{ $workout_id }}">Back</a>
 	</form>
 
 </div>

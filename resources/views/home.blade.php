@@ -5,9 +5,10 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">Dashboard (Put previous weeks day/exercises/weights here)</div>
             </div>
         </div>
+        <a class='btn btn-info' href="/workouts/new">Add Workout +</a>
     </div>
 </div>
 <div class='row'>	

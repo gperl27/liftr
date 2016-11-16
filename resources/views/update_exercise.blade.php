@@ -3,6 +3,12 @@
 @section('content')
 <div class='container'>
 	<h1>Update Exercise</h1>
+
+	@if (session('status'))
+	    <div class="alert alert-success">
+	        {{ session('status') }}
+	    </div>
+	@endif
 	
 	<form action="/exercise/{{ $exercise->id }}/update" method="post" accept-charset="utf-8">
 		{{ csrf_field() }}
@@ -23,7 +29,8 @@
 			<label for="exerciseWeight">Weight</label>
 			<input class='form-control' type="number" name="weight" id='exerciseWeight' placeholder="Enter amount of weight" value="{{ $exercise->weight }}">
 		</div>
-		<button type="submit" class="btn btn-default">Submit</button>
+		<button type="submit" class="btn btn-success">Save</button>
+		<a class='btn btn-warning' href="/workouts/{{ $exercise->workout_id }}">Back</a>
 	</form>
 
 </div>

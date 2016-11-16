@@ -18,6 +18,8 @@ Route::get('/', 'HomeController@index');
 
 
 //workouts
+Route::get('/workouts/new', 'WorkoutsController@new');
+Route::post('/workouts/create', 'WorkoutsController@create');
 Route::get('/workouts/{workout}', 'WorkoutsController@show');
 
 

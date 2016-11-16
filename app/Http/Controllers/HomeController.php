@@ -24,7 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-
         $user = Auth::user();
         $workouts = $user->workouts;
         $mondayWorkout = $workouts->where('day' , 'Monday')->first();
