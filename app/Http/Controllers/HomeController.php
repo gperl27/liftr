@@ -40,8 +40,8 @@ class HomeController extends Controller
         $wednesdayWorkout = $this->findWorkout('Wednesday', $monday, $sunday, $workouts);
         $thursdayWorkout = $this->findWorkout('Thursday', $monday, $sunday, $workouts);
         $fridayWorkout = $this->findWorkout('Friday', $monday, $sunday, $workouts);
-        $saturdayWorkout = $this->findWorkout('Saturday', $monday, $sunday, $workouts);
-        $sundayWorkout = $this->findWorkout('Sunday', $monday, $sunday, $workouts);
+        // $saturdayWorkout = $this->findWorkout('Saturday', $monday, $sunday, $workouts);
+        // $sundayWorkout = $this->findWorkout('Sunday', $monday, $sunday, $workouts);
 
         if($mondayWorkout){
             $mondayExercises = $mondayWorkout->exercises;
@@ -58,21 +58,21 @@ class HomeController extends Controller
         if($fridayWorkout){
             $fridayExercises = $fridayWorkout->exercises;
         }
-        if($saturdayWorkout){
-            $saturdayExercises = $saturdayWorkout->exercises;
-        }        
-        if($sundayWorkout){
-            $sundayExercises = $sundayWorkout->exercises;
-        }
+        // if($saturdayWorkout){
+        //     $saturdayExercises = $saturdayWorkout->exercises;
+        // }        
+        // if($sundayWorkout){
+        //     $sundayExercises = $sundayWorkout->exercises;
+        // }
 
 
         return view('home', compact('mondayExercises', 'mondayWorkout',
                                     'tuesdayExercises', 'tuesdayWorkout',
                                     'wednesdayExercises', 'wednesdayWorkout',
                                     'thursdayExercises', 'thursdayWorkout',
-                                    'fridayExercises', 'fridayWorkout',
-                                    'saturdayExercises', 'saturdayWorkout',
-                                    'sundayExercises', 'sundayWorkout'
+                                    'fridayExercises', 'fridayWorkout'//,
+                                    // 'saturdayExercises', 'saturdayWorkout',
+                                    // 'sundayExercises', 'sundayWorkout'
                                 ));
     }
 
