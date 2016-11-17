@@ -14,7 +14,7 @@
 <div class='container-fluid'>
     <div class='row'>   
         <div class='col-md-2 col-md-offset-1'>
-            <h2 class='home-header'>Monday</h2>
+            <h2 class='inline-header'>Monday</h2>
             @if($mondayWorkout)
                 <a class='btn btn-warning home-edit-btn' href="/workouts/{{ $mondayWorkout->id }}"><span class='glyphicon glyphicon-pencil' aria-hidden="true"></span></a>
                 <ul class='list-group'>
@@ -44,7 +44,7 @@
             @endif
         </div>
         <div class='col-md-2'>
-            <h2 class='home-header'>Tuesday</h2>
+            <h2 class='inline-header'>Tuesday</h2>
             @if($tuesdayWorkout)
                 <a class='btn btn-warning home-edit-btn' href="/workouts/{{ $tuesdayWorkout->id }}"><span class='glyphicon glyphicon-pencil' aria-hidden="true"></span></a>
                 <ul class='list-group'>
@@ -75,7 +75,7 @@
             @endif
         </div>
         <div class='col-md-2'>
-            <h2 class='home-header'>Wednesday</h2>
+            <h2 class='inline-header'>Wednesday</h2>
             @if($wednesdayWorkout)
                 <a class='btn btn-warning home-edit-btn' href="/workouts/{{ $wednesdayWorkout->id }}"><span class='glyphicon glyphicon-pencil' aria-hidden="true"></span></a>
                 <ul class='list-group'>
@@ -106,7 +106,7 @@
             @endif
         </div>
         <div class='col-md-2'>
-        	<h2 class='home-header'>Thursday</h2>
+        	<h2 class='inline-header'>Thursday</h2>
             @if($thursdayWorkout)
                 <a class='btn btn-warning home-edit-btn' href="/workouts/{{ $thursdayWorkout->id }}"><span class='glyphicon glyphicon-pencil' aria-hidden="true"></span></a>
                 <ul class='list-group'>
@@ -137,7 +137,7 @@
             @endif
         </div>
         <div class='col-md-2'>
-        	<h2 class='home-header'>Friday</h2>
+        	<h2 class='inline-header'>Friday</h2>
             @if($fridayWorkout)
                 <a class='btn btn-warning home-edit-btn' href="/workouts/{{ $fridayWorkout->id }}"><span class='glyphicon glyphicon-pencil' aria-hidden="true"></span></a>
                 <ul class='list-group'>

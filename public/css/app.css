@@ -5773,7 +5773,10 @@ button.close {
  *  CUSTOM CSS
  */
 
-.home-header {
+
+/* Home Page */
+
+.inline-header {
   display: inline-block;
 }
 
@@ -5784,4 +5787,45 @@ button.close {
 
 .h4-home {
   font-weight: 700;
+}
+
+/* Show Workout Page */
+
+.workout-back-btn {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.new-workout-btn {
+  font-size: 20px;
+  margin-left: 20%;
+  margin-bottom: 10px;
+}
+
+.delete-exercise-btn {
+  position: absolute;
+  top: 25px;
+  right: 100px;
+}
+
+.workout-table {
+  width: 40%;
+  margin: auto;
+}
+
+.edit-exercise-btn {
+  margin: auto;
+}
+
+.single-workout-div table {
+  font-size: 22px;
+}
+
+.single-workout-div a {
+  font-size: 20px;
+}
+
+.single-workout-div h4 {
+  font-weight: 700;
+  font-size: 28px;
 }

@@ -14,8 +14,8 @@
 			    <option>Wednesday</option>
 			    <option>Thursday</option>
 			    <option>Friday</option>
-			    <option>Saturday</option>
-			    <option>Sunday</option>
+{{-- 			    <option>Saturday</option>
+			    <option>Sunday</option> --}}
 			  </select>
 		</div>	
 
