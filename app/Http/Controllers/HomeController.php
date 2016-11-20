@@ -27,10 +27,22 @@ class HomeController extends Controller
      */
     
 
-    public function index()
+    public function index($date = null)
     {
-        $monday = date( 'Y-m-d', strtotime( 'monday this week' ) );
-        $sunday = date( 'Y-m-d', strtotime( 'sunday this week' ) );
+        if($date == -1){
+            $monday = date( 'Y-m-d', strtotime( 'monday last week' ) );
+            $sunday = date( 'Y-m-d', strtotime( 'sunday last week' ) );
+            $weekof = date('l \t\h\e jS \of F Y', strtotime('monday last week'));
+        } else if($date == 1) {
+            $monday = date( 'Y-m-d', strtotime( 'monday next week' ) );
+            $sunday = date( 'Y-m-d', strtotime( 'sunday next week' ) );
+            $weekof = date('l \t\h\e jS \of F Y', strtotime('monday next week'));
+        } else {            
+            $monday = date( 'Y-m-d', strtotime( 'monday this week' ) );
+            $sunday = date( 'Y-m-d', strtotime( 'sunday this week' ) );
+            $weekof = date('l \t\h\e jS \of F Y', strtotime('monday this week'));
+        }
+
 
         $user = Auth::user();
         $workouts = $user->workouts;                        
@@ -66,7 +78,8 @@ class HomeController extends Controller
         // }
 
 
-        return view('home', compact('mondayExercises', 'mondayWorkout',
+        return view('home', compact('weekof',
+                                    'mondayExercises', 'mondayWorkout',
                                     'tuesdayExercises', 'tuesdayWorkout',
                                     'wednesdayExercises', 'wednesdayWorkout',
                                     'thursdayExercises', 'thursdayWorkout',

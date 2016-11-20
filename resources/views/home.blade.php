@@ -3,12 +3,15 @@
 @section('content')
 <div class="container">
     <div class="row">
+        <div class='jumbotron'>
+            <h1>Week of {{ $weekof }}</h1>
+        </div>
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard (Put previous weeks day/exercises/weights here)</div>
             </div>
+            <a class='btn btn-info' href="/workouts/new">Add Workout +</a>
         </div>
-        <a class='btn btn-info' href="/workouts/new">Add Workout +</a>
     </div>
 </div>
 <div class='container-fluid'>

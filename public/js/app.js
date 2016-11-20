@@ -146,7 +146,6 @@ eval("\n/**\n * First we will load all of this project's JavaScript dependencies
  * Change weight inputs depending on set value
  */
 
-
  $('#exerciseSets').change(function(e){
  	var sets = e.currentTarget.value;
 

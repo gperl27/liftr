@@ -14,7 +14,7 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index');
+Route::get('/{date?}', 'HomeController@index');
 
 
 //workouts
