@@ -26,8 +26,10 @@
 			<input class='form-control' type="number" name="reps" id='exerciseReps' placeholder="Enter amount of reps" value="{{ $exercise->reps }}">
 		</div>
 		<div class='form-group'>
-			<label for="exerciseWeight">Weight</label>
-			<input class='form-control' type="number" name="weight" id='exerciseWeight' placeholder="Enter amount of weight" value="{{ $exercise->weight }}">
+            @foreach( json_decode($exercise->weight) as $weight)
+                <label for="exerciseWeight">Weight</label>
+				<input class='form-control' type="number" name="array[]" id='exerciseWeight' placeholder="Enter amount of weight" value="{{ $weight }}">
+	        @endforeach
 		</div>
 		<button type="submit" class="btn btn-success">Save</button>
 		<a class='btn btn-warning' href="/workouts/{{ $exercise->workout_id }}">Back</a>

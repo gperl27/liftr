@@ -23,9 +23,11 @@
                             </tr>
                             <tr>
                                 <th>Weight (lbs)</th>
+                                <td>
                                 @foreach( json_decode($exercise->weight) as $weight)
-                                    <td>{{ $weight }}</td>
+                                    {{ $weight }},  
                                 @endforeach
+                                </td>
                             </tr>
                         </tbody>
                     </table>

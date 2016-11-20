@@ -50,7 +50,14 @@ class ExercisesController extends Controller
  */
   	public function update(Request $request, Exercise $exercise)
     {
-  		$exercise->update($request->all());
+      $weight = json_encode($request->array);
+
+      $exercise->update([
+          'name'   => $request->name,
+          'sets'   => $request->sets,
+          'reps'   => $request->reps,
+          'weight' => $weight,
+        ]);
       $request->session()->flash('status', 'Exercise updated!');
   		return back();
   	}

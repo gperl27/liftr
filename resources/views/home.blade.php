@@ -63,7 +63,11 @@
                                 <tr>
                                     <td>{{ $exercise->sets }}</td>
                                     <td>{{ $exercise->reps }}</td>
-                                    <td>{{ $exercise->weight }}</td>
+                                    <td>
+                                    @foreach( json_decode($exercise->weight) as $weight)
+                                        {{ $weight }},
+                                    @endforeach
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
