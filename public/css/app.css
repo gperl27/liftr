@@ -5804,14 +5804,14 @@ button.close {
 
 .delete-exercise-btn {
   position: absolute;
-  top: 25px;
-  right: 100px;
+  top: 15px;
+  right: 15px;
 }
 
-.workout-table {
+/*.workout-table {
   width: 40%;
   margin: auto;
-}
+}*/
 
 .edit-exercise-btn {
   margin: auto;

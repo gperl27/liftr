@@ -13,13 +13,23 @@ class ExercisesController extends Controller
         $this->middleware('auth');
     }
 
-  	public function new($workout_id){
+  	public function new($workout_id)
+    {
   		// $workout = Workout::find($workout_id);
   		return view('new_exercise', compact('workout_id'));
   	}
 
-  	public function create(Request $request, Workout $workout){
-  		$workout->exercises()->create($request->all());
+  	public function create(Request $request, Workout $workout)
+    {
+      //strip weight whitespaces, encode it as json string
+      $weight = json_encode($request->array);
+
+  		$workout->exercises()->create([
+          'name'   => $request->name,
+          'sets'   => $request->sets,
+          'reps'   => $request->reps,
+          'weight' => $weight,
+        ]);
   		return redirect("/workouts/$workout->id");
   	}
 
@@ -28,7 +38,8 @@ class ExercisesController extends Controller
   		return back();
   	}
 
-  	public function edit(Exercise $exercise){
+  	public function edit(Exercise $exercise)
+    {
   		return view('update_exercise', compact('exercise'));
   	}
 
@@ -37,7 +48,8 @@ class ExercisesController extends Controller
 /*
 	Needs fixing on routes/http_parse_params(param)
  */
-  	public function update(Request $request, Exercise $exercise){
+  	public function update(Request $request, Exercise $exercise)
+    {
   		$exercise->update($request->all());
       $request->session()->flash('status', 'Exercise updated!');
   		return back();

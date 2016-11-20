@@ -9,7 +9,7 @@
 
 	<ul class='list-group'>
 	@foreach($workout->exercises as $exercise)
-		<li class='list-group-item'>		
+		<li class='list-group-item col-md-6 col-md-offset-3'>		
 					<h4 class='text-center'>{{ $exercise->name }}</h4>
                     <table class='workout-table table table-condensed'>
                         <tbody>
@@ -23,7 +23,9 @@
                             </tr>
                             <tr>
                                 <th>Weight (lbs)</th>
-                                <td>{{ $exercise->weight }}</td>
+                                @foreach( json_decode($exercise->weight) as $weight)
+                                    <td>{{ $weight }}</td>
+                                @endforeach
                             </tr>
                         </tbody>
                     </table>
@@ -39,6 +41,7 @@
 		</li>
 	@endforeach
 	</ul>
+
 
 </div>
 @stop

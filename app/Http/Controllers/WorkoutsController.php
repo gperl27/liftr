@@ -18,6 +18,8 @@ class WorkoutsController extends Controller
     }
 
     public function show(Workout $workout){
+    	// dd(json_decode($workout->exercises->first()->weight));
+
     	return view('show', compact('workout'));
     }
 
