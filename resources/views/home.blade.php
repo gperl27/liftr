@@ -3,19 +3,18 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class='text-center'>
-            <a class='btn btn-primary' href='/current'>Current Week</a>
-        </div>
         <div class='jumbotron week-status'>
             <a class='btn btn-success' href="/previous"><span class='glyphicon glyphicon-arrow-left'></span> Previous</a>
             <h1>Week of {{ $weekof }}</h1>
             <a class='btn btn-success' href="/next"><span class='glyphicon glyphicon-arrow-right'></span> Next</a>
         </div>
+        <div class='text-center current-week-btn'>
+            <a class='btn btn-primary' href='/current'>Current Week</a>
+        </div>
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard (Put previous weeks day/exercises/weights here)</div>
             </div>
-            <a class='btn btn-info' href="/workouts/new">Add Workout +</a>
         </div>
     </div>
 </div>
@@ -52,6 +51,7 @@
                 @endforeach
                 </ul>
             @else
+                <a class='btn btn-info home-edit-btn' href="/workouts/new"><span class='glyphicon glyphicon-plus'></span></a>
                 <h4 class='h4-home alert alert-info'>No Monday workout found for this week.</h4>
             @endif
         </div>
@@ -87,6 +87,7 @@
                 @endforeach
                 </ul>
             @else
+                <a class='btn btn-info home-edit-btn' href="/workouts/new"><span class='glyphicon glyphicon-plus'></span></a>
                 <h4 class='h4-home alert alert-info'>No Tuesday workout found for this week.</h4>
             @endif
         </div>
@@ -122,6 +123,7 @@
                 @endforeach
                 </ul>
             @else
+                <a class='btn btn-info home-edit-btn' href="/workouts/new"><span class='glyphicon glyphicon-plus'></span></a>
                 <h4 class='h4-home alert alert-info'>No Wednesday workout found for this week.</h4>
             @endif
         </div>
@@ -157,6 +159,7 @@
                 @endforeach
                 </ul>
             @else
+                <a class='btn btn-info home-edit-btn' href="/workouts/new"><span class='glyphicon glyphicon-plus'></span></a>
                 <h4 class='h4-home alert alert-info'>No Thursday workout found for this week.</h4>
             @endif
         </div>
@@ -192,6 +195,7 @@
                 @endforeach
                 </ul>
             @else
+                <a class='btn btn-info home-edit-btn' href="/workouts/new"><span class='glyphicon glyphicon-plus'></span></a>
                 <h4 class='h4-home alert alert-info'>No Friday workout found for this week.</h4>
             @endif
         </div>

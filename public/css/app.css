@@ -5804,6 +5804,16 @@ button.close {
   vertical-align: middle;
 }
 
+.current-week-btn {
+  padding: 25px;
+  padding-top: 0;
+}
+
+.jumbotron {
+  margin-bottom: 0;
+  padding-bottom: 15px;
+}
+
 /* Show Workout Page */
 
 .workout-back-btn {
