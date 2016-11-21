@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use Carbon;
+use DateTime;
 
 class HomeController extends Controller
 {
@@ -29,23 +30,38 @@ class HomeController extends Controller
 
     public function index($date = null)
     {
-        if($date == -1){
-            $monday = date( 'Y-m-d', strtotime( 'monday last week' ) );
-            $sunday = date( 'Y-m-d', strtotime( 'sunday last week' ) );
-            $weekof = date('l \t\h\e jS \of F Y', strtotime('monday last week'));
-        } else if($date == 1) {
-            $monday = date( 'Y-m-d', strtotime( 'monday next week' ) );
-            $sunday = date( 'Y-m-d', strtotime( 'sunday next week' ) );
-            $weekof = date('l \t\h\e jS \of F Y', strtotime('monday next week'));
-        } else {            
-            $monday = date( 'Y-m-d', strtotime( 'monday this week' ) );
-            $sunday = date( 'Y-m-d', strtotime( 'sunday this week' ) );
-            $weekof = date('l \t\h\e jS \of F Y', strtotime('monday this week'));
+        $user = Auth::user();
+        $workouts = $user->workouts;
+        $currentWeek = $user->currentWeek;
+
+        if($date){        
+            switch($date){
+                case 'previous':
+                    $currentWeek--;
+                    $user->update(['currentWeek' => $currentWeek]);
+                    break;
+                case 'next':
+                    $currentWeek++;
+                    $user->update(['currentWeek' => $currentWeek]);
+                    break;
+                case 'current':
+                    $currentWeek = date('W');
+                    $user->update(['currentWeek' => $currentWeek]);
+                    break;
+            }
         }
 
+        //Use Currentweek to delegate weeks
+        //Refactor this
 
-        $user = Auth::user();
-        $workouts = $user->workouts;                        
+        $dto = new DateTime();
+        $ret['monday'] = $dto->setISODate(date('Y'), $currentWeek)->format('Y-m-d');
+        $ret['sunday'] = $dto->modify('+6 days')->format('Y-m-d');        
+
+        $monday = $ret['monday'];
+        $sunday = $ret['sunday'];
+        $weekof = $monday;
+                               
         
         $mondayWorkout = $this->findWorkout('Monday', $monday, $sunday, $workouts);
         $tuesdayWorkout = $this->findWorkout('Tuesday', $monday, $sunday, $workouts);

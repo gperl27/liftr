@@ -3,8 +3,13 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class='jumbotron'>
+        <div class='text-center'>
+            <a class='btn btn-primary' href='/current'>Current Week</a>
+        </div>
+        <div class='jumbotron week-status'>
+            <a class='btn btn-success' href="/previous"><span class='glyphicon glyphicon-arrow-left'></span> Previous</a>
             <h1>Week of {{ $weekof }}</h1>
+            <a class='btn btn-success' href="/next"><span class='glyphicon glyphicon-arrow-right'></span> Next</a>
         </div>
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -36,7 +41,11 @@
                                 <tr>
                                     <td>{{ $exercise->sets }}</td>
                                     <td>{{ $exercise->reps }}</td>
-                                    <td>{{ $exercise->weight }}</td>
+                                    <td>
+                                        @foreach( json_decode($exercise->weight) as $weight)
+                                            {{ $weight }},
+                                        @endforeach
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -101,7 +110,11 @@
                                 <tr>
                                     <td>{{ $exercise->sets }}</td>
                                     <td>{{ $exercise->reps }}</td>
-                                    <td>{{ $exercise->weight }}</td>
+                                    <td>
+                                        @foreach( json_decode($exercise->weight) as $weight)
+                                            {{ $weight }},
+                                        @endforeach
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>                    
@@ -132,7 +145,11 @@
                                 <tr>
                                     <td>{{ $exercise->sets }}</td>
                                     <td>{{ $exercise->reps }}</td>
-                                    <td>{{ $exercise->weight }}</td>
+                                    <td>
+                                        @foreach( json_decode($exercise->weight) as $weight)
+                                            {{ $weight }},
+                                        @endforeach
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>                    
@@ -163,7 +180,11 @@
                                 <tr>
                                     <td>{{ $exercise->sets }}</td>
                                     <td>{{ $exercise->reps }}</td>
-                                    <td>{{ $exercise->weight }}</td>
+                                    <td>
+                                        @foreach( json_decode($exercise->weight) as $weight)
+                                            {{ $weight }},
+                                        @endforeach
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>                    

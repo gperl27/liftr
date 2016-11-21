@@ -5789,6 +5789,21 @@ button.close {
   font-weight: 700;
 }
 
+.week-status {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.week-status h1 {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.week-status a, h1{
+  display: inline;
+  vertical-align: middle;
+}
+
 /* Show Workout Page */
 
 .workout-back-btn {

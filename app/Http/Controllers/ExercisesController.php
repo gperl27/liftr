@@ -43,11 +43,6 @@ class ExercisesController extends Controller
   		return view('update_exercise', compact('exercise'));
   	}
 
-
-
-/*
-	Needs fixing on routes/http_parse_params(param)
- */
   	public function update(Request $request, Exercise $exercise)
     {
       $weight = json_encode($request->array);
