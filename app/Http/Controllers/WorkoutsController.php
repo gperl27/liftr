@@ -22,6 +22,8 @@ class WorkoutsController extends Controller
     }
 
     public function create(Request $request){
+    	$this->validate($request, ['day' => 'required|string', 'week' => 'required|date']);
+
     	$user = Auth::user();
     	$user->workouts()->create($request->all());
     	$workout = $user->workouts->last();

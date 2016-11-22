@@ -2,6 +2,16 @@
 
 @section('content')
 <div class='container'>
+	@if (count($errors) > 0)
+	    <div class="alert alert-danger">
+	        <ul>
+	            @foreach ($errors->all() as $error)
+	                <li>{{ $error }}</li>
+	            @endforeach
+	        </ul>
+	    </div>
+	@endif
+
 	<h1>Add Exercise</h1>
 	
 	<form action="/workout/{{ $workout_id }}/exercise/create" method="post" accept-charset="utf-8">
@@ -31,7 +41,7 @@
 		</div>
 		<div id='weights' class='form-group'>
 			<label for="exerciseWeight">Weight</label>
-			<input class='form-control' type="number" name="array[]" id='exerciseWeight' placeholder="Enter amount of weight">
+			<input class='form-control' type="number" name="weight[]" id='exerciseWeight' placeholder="Enter amount of weight">
 		</div>
 		<button type="submit" class="btn btn-primary">Submit</button>
 		<a class='btn btn-warning' href="/workouts/{{ $workout_id }}">Back</a>

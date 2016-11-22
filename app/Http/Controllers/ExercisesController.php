@@ -15,14 +15,16 @@ class ExercisesController extends Controller
 
   	public function new($workout_id)
     {
-  		// $workout = Workout::find($workout_id);
   		return view('new_exercise', compact('workout_id'));
   	}
 
   	public function create(Request $request, Workout $workout)
     {
+      $this->validate($request, ['name' => 'required|string', 'sets' => 'required|numeric',
+                                 'reps' => 'required|numeric', 'weight.*' => 'required' ]);
+
       //strip weight whitespaces, encode it as json string
-      $weight = json_encode($request->array);
+      $weight = json_encode($request->weight);
 
   		$workout->exercises()->create([
           'name'   => $request->name,
@@ -45,7 +47,10 @@ class ExercisesController extends Controller
 
   	public function update(Request $request, Exercise $exercise)
     {
-      $weight = json_encode($request->array);
+      $this->validate($request, ['name' => 'required|string', 'sets' => 'required|numeric',
+                                 'reps' => 'required|numeric', 'weight.*' => 'required' ]);
+      
+      $weight = json_encode($request->weight);
 
       $exercise->update([
           'name'   => $request->name,

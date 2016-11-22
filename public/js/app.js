@@ -154,7 +154,7 @@ eval("\n/**\n * First we will load all of this project's JavaScript dependencies
 
  	for(var i = 1;i <= sets; i++){
  		var html = '<label for="exerciseWeight-' + i +'">Weight</label>' +
- 				   '<input class="form-control" type="number" name="" id="exerciseWeight-' + i + '" placeholder="Enter amount of weight">';
+ 				   '<input class="form-control" type="number" name="weight[]" id="exerciseWeight-' + i + '" placeholder="Enter amount of weight">';
 
  		$('#weights').append(html);
  	}
