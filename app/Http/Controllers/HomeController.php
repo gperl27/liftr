@@ -92,9 +92,15 @@ class HomeController extends Controller
         // if($sundayWorkout){
         //     $sundayExercises = $sundayWorkout->exercises;
         // }
+        // 
+        
+        //get the exercises of last week and current day for dashboard
+        //for comparison week to week
+        
+        $lastweekDate = date('Y-m-d', strtotime('-1 week'));
+        $lastweekWorkout = $workouts->where('week', $lastweekDate)->first()->exercises;
 
-
-        return view('home', compact('weekof',
+        return view('home', compact('weekof', 'lastweekWorkout',
                                     'mondayExercises', 'mondayWorkout',
                                     'tuesdayExercises', 'tuesdayWorkout',
                                     'wednesdayExercises', 'wednesdayWorkout',
