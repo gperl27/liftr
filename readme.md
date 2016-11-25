@@ -30,7 +30,7 @@ Liftr is a web application that helps users keep track of their workout routines
 
 ### Contribution
 
-Feel free to comment on or contribute to Lift. If you'd like to get in touch or are interested in more of my work, please visit [my website](http://gregperlman.net).
+Feel free to comment on or contribute to Liftr. If you'd like to get in touch or are interested in more of my work, please visit [my website](http://gregperlman.net).
 
 ### License
 
