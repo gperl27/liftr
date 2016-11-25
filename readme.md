@@ -10,11 +10,17 @@ Liftr is a web application that helps users keep track of their workout routines
 
 - Configure the .env file, mainly Mysql (use the .env.example file as a boilerplate)
 - Install Composer packages
+
 `$ composer install`
+
 - Run migrations
+
 `$ php artisan migrate`
+
 - Start the server (defaults to port 8000)
+
 `$ php artisan serve`
+
 - Visit [localhost:8000](http://localhost:8000) in your browser
 
 ### Development Status
