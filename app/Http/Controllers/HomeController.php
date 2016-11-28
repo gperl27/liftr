@@ -61,8 +61,7 @@ class HomeController extends Controller
         $monday = $ret['monday'];
         $sunday = $ret['sunday'];
         $weekof = $monday;
-                               
-        
+                
         $mondayWorkout = $this->findWorkout('Monday', $monday, $sunday, $workouts);
         $tuesdayWorkout = $this->findWorkout('Tuesday', $monday, $sunday, $workouts);
         $wednesdayWorkout = $this->findWorkout('Wednesday', $monday, $sunday, $workouts);
@@ -98,9 +97,14 @@ class HomeController extends Controller
         //for comparison week to week
         
         $lastweekDate = date('Y-m-d', strtotime('-1 week'));
-        $lastweekWorkout = $workouts->where('week', $lastweekDate)->first()->exercises;
+        $lastweekWorkout = $workouts->where('week', $lastweekDate)->first();
+        
+        if($lastweekWorkout){
+            $lastweekExercises = $lastweekWorkout->exercises;
+        }
 
-        return view('home', compact('weekof', 'lastweekWorkout',
+        return view('home', compact('weekof', 
+                                    'lastweekWorkout', 'lastweekExercises',
                                     'mondayExercises', 'mondayWorkout',
                                     'tuesdayExercises', 'tuesdayWorkout',
                                     'wednesdayExercises', 'wednesdayWorkout',

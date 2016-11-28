@@ -15,34 +15,36 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4>Last Week Today:</h4>
-                    @if(count($lastweekWorkout) > 0)
-                        <ul class="list-inline">
-                        @foreach($lastweekWorkout as $exercise)
-                            <li class='list-group-item'>
-                                <h4 class='h4-home'>{{ $exercise->name }}</h4>
-                                <table class='table table-condensed'>
-                                    <thead>
-                                        <tr>
-                                            <th>Sets</th>
-                                            <th>Reps</th>
-                                            <th>Weight (lbs)</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>{{ $exercise->sets }}</td>
-                                            <td>{{ $exercise->reps }}</td>
-                                            <td>
-                                                @foreach( json_decode($exercise->weight) as $weight)
-                                                    {{ $weight }},
-                                                @endforeach
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </li>
-                        @endforeach
-                        </ul>
+                    @if($lastweekWorkout)
+                        @if(count($lastweekExercises) > 0)
+                            <ul class="list-inline">
+                            @foreach($lastweekExercises as $exercise)
+                                <li class='list-group-item'>
+                                    <h4 class='h4-home'>{{ $exercise->name }}</h4>
+                                    <table class='table table-condensed'>
+                                        <thead>
+                                            <tr>
+                                                <th>Sets</th>
+                                                <th>Reps</th>
+                                                <th>Weight (lbs)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>{{ $exercise->sets }}</td>
+                                                <td>{{ $exercise->reps }}</td>
+                                                <td>
+                                                    @foreach( json_decode($exercise->weight) as $weight)
+                                                        {{ $weight }},
+                                                    @endforeach
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </li>
+                            @endforeach
+                            </ul>
+                        @endif
                     @else
                         No workout recorded this day last week.
                     @endif
