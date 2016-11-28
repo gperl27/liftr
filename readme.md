@@ -1,8 +1,10 @@
 # Liftr - by Greg Perlman
 
+**Liftr alpha version is [LIVE](http://liftr.herokuapp.com)**
+
 ## About Liftr
 
-Liftr is a web application that helps users keep track of their workout routines and exercises. It features clean and simple week-to-week tracking, while not being intrusive or imposing. Liftr is currently optimized for most desktop browsers, with mobile development in progress.
+Liftr is a web application that helps users keep track of their workout routines and exercises. It features clean and simple week-to-week tracking, while not being intrusive or imposing. Liftr is currently optimized for most desktop browsers and is responsive on most devices.
 
 ### Local setup/installation
 
@@ -25,8 +27,8 @@ Liftr is a web application that helps users keep track of their workout routines
 
 ### Development Status
 
-- Mobile coming soon
-- Deployment in progress
+- Anaytics/Tracking
+- Personal Records
 
 ### Contribution
 
