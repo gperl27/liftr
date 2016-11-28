@@ -5873,6 +5873,6 @@ button.close {
   }
 
   .current-week-btn {
-    padding-top: auto;
+    padding-top: 25px;
   }
 }
