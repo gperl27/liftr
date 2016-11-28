@@ -5854,3 +5854,21 @@ button.close {
   font-weight: 700;
   font-size: 28px;
 }
+
+
+/** Responsive for Mobile (smartphones) */
+
+@media only screen and (max-device-width: 736px) {
+  .mobile-hide {
+    display: none;
+  }
+
+  .calendar-font {
+    font-size: 18px;
+  }
+
+  .new-workout-btn {
+    margin-left: auto;
+    display: block;
+  }
+}

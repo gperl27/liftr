@@ -4,9 +4,9 @@
 <div class="container">
     <div class="row">
         <div class='jumbotron week-status'>
-            <a class='btn btn-success' href="/previous"><span class='glyphicon glyphicon-arrow-left'></span> Previous</a>
-            <h1>Week of {{ $weekof }}</h1>
-            <a class='btn btn-success' href="/next"><span class='glyphicon glyphicon-arrow-right'></span> Next</a>
+            <a class='btn btn-success' href="/previous"><span class='glyphicon glyphicon-arrow-left'></span> <span class="mobile-hide">Previous<span></a>
+            <h1 class="calendar-font">Week of {{ $weekof }}</h1>
+            <a class='btn btn-success' href="/next"><span class='glyphicon glyphicon-arrow-right'></span> <span class="mobile-hide">Next</span></a>
         </div>
         <div class='text-center current-week-btn'>
             <a class='btn btn-primary' href='/current'>Current Week</a>
