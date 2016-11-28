@@ -1,11 +1,11 @@
 <?php
 
-    $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+    // $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-    $host = $url["host"];
-    $username = $url["user"];
-    $password = $url["pass"];
-    $database = substr($url["path"], 1);
+    // $host = $url["host"];
+    // $username = $url["user"];
+    // $password = $url["pass"];
+    // $database = substr($url["path"], 1);
 
 return [
 
@@ -50,7 +50,7 @@ return [
     | choice installed on your machine before you begin development.
     |
     */
-
+   
     'connections' => [
 
         'sqlite' => [
@@ -60,14 +60,15 @@ return [
         ],
 
         'mysql' => [
-            'driver' => 'mysql',
-            'host' => $host,
-            'database' => $database,
-            'username' => $username,
-            'password' => $password,
-            'charset' => 'utf8',
+            'driver'    => 'mysql',
+            'host'      => env('DB_HOST', 'us-cdbr-iron-east-04.cleardb.net'),
+            'database'  => env('DB_DATABASE', 'heroku_16acd434c8beabf'),
+            'username'  => env('DB_USERNAME', 'bd1dcbaa7f0ea9'),
+            'password'  => env('DB_PASSWORD', 'efdcc054'),
+            'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
-            'prefix' => '',
+            'prefix'    => '',
+            'strict'    => false,
         ],
 
         'pgsql' => [

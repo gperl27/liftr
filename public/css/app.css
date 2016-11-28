@@ -5871,4 +5871,8 @@ button.close {
     margin-left: auto;
     display: block;
   }
+
+  .current-week-btn {
+    padding-top: auto;
+  }
 }
