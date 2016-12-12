@@ -34,7 +34,10 @@ class HomeController extends Controller
         $workouts = $user->workouts;
         $currentWeek = $user->currentWeek;
 
-        if($date){        
+        //will be checking against this to fix problem where refreshing takes users to previous or next weeks
+        $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
+
+        if($date && !$pageWasRefreshed){        
             switch($date){
                 case 'previous':
                     $currentWeek--;
