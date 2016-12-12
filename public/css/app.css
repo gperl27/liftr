@@ -5861,11 +5861,20 @@ button.close {
 
 /* Responsive for Tablets */
 
+@media only screen and (max-width: 1125px) and (min-width: 1000px){
+  .table {
+    font-size: 75%;
+  }
+}
+
 @media only screen and (max-width: 1024px){
   .jumbotron h1 {
     font-size: 36px;
   }
 
+  .table {
+    font-size: 75%;
+  }
 }
 
 /** Responsive for Mobile (smartphones) */
