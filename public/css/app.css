@@ -5855,6 +5855,18 @@ button.close {
   font-size: 28px;
 }
 
+.current-week-btn {
+  padding-top: 25px;
+}
+
+/* Responsive for Tablets */
+
+@media only screen and (max-width: 1024px){
+  .jumbotron h1 {
+    font-size: 36px;
+  }
+
+}
 
 /** Responsive for Mobile (smartphones) */
 
@@ -5863,7 +5875,7 @@ button.close {
     display: none;
   }
 
-  .calendar-font {
+  .jumbotron h1 {
     font-size: 18px;
   }
 
@@ -5872,7 +5884,4 @@ button.close {
     display: block;
   }
 
-  .current-week-btn {
-    padding-top: 25px;
-  }
 }
